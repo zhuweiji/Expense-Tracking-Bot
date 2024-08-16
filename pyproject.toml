@@ -1,0 +1,18 @@
+[project]
+name = "Expense_Tracker_Telegram_Bot"
+version = "0.1.0"
+description = "This repository contains a Telegram bot that helps you track and analyze your expenses. The bot is designed to run as a Docker container and uses python-telegram-bot to interact with users."
+authors = [
+    {name = "Zhu Weiji", email = "zhuweiji1997@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
