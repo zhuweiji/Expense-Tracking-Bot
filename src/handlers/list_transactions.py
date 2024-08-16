@@ -35,7 +35,7 @@ async def list_transactions_last_month(update: Update,  context: CallbackContext
 
         for i in chunk_html_for_telegram(html_txt):
             await update.message.reply_text(i, parse_mode=ParseMode.HTML)
-        await update.message.reply_text(f'Total: {total}')
+        await update.message.reply_text(f'Total: ${total:.2f}')
     else:
         await update.message.reply_text('no files')
 

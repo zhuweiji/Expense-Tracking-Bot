@@ -3,6 +3,8 @@ import html
 import io
 import re
 
+from src.utilities.data_utilities import safe_float
+
 
 def escape_markdown_v2(text):
     """
@@ -110,7 +112,7 @@ def sort_csv_by_price_to_telegram_html(csv_content):
 
     # Convert to list of dictionaries and sort by price
     data = list(reader)
-    data.sort(key=lambda x: float(x.get('price', 0) or 0), reverse=True)
+    data.sort(key=lambda x: safe_float(x.get('price', 0) or 0), reverse=True)
 
     # Generate Telegram-compatible HTML
     html_output = '<pre>\n'

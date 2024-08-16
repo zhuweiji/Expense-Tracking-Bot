@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 
 from telegram import Update
@@ -7,7 +8,17 @@ from src.utilities.data_utilities import read_transaction_csvs
 from src.utilities.text_message_utilities import format_nested_dict
 
 
-async def view_stats(update: Update, context):
+async def view_last_statement_stats(update: Update, context):
+    assert update.message, 'update.message is None'
+
+    df = read_transaction_csvs(data_dir, latest_only=True)
+
+    analysis = analyze_transactions(df)
+    txt = format_nested_dict(analysis)
+    await update.message.reply_text(txt)
+
+
+async def view_last_month_stats(update: Update, context):
     assert update.message, 'update.message is None'
 
     df = read_transaction_csvs(data_dir)

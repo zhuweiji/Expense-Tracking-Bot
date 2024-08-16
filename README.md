@@ -53,7 +53,8 @@ Once the bot is running, you can interact with it on Telegram using the followin
 
 - `/start` - Begin interacting with the bot
 - `/help` - Display available commands and instructions
-- `/view` - Show an analysis of last month's expenses and an overview of transactions by month
+- `/last_month_stats` - Show an analysis of last month's expenses and an overview of transactions by month
+- `/last_statement_stats` - Show an analysis of the last credit card statement's expenses
 - `/data` - List the months for which expense data is available and processed
 - `/list` - Display a detailed list of transactions from the last month
 

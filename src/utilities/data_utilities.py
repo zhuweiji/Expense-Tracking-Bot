@@ -8,6 +8,13 @@ import pandas as pd
 from src.config.project_paths import data_dir
 
 
+def safe_float(value):
+    try:
+        return float(value or 0)
+    except ValueError:
+        return float(0)
+
+
 def sum_prices_from_csv(csv_content):
     csv_file = io.StringIO(csv_content)
     reader = csv.DictReader(csv_file)

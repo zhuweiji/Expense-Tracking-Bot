@@ -9,7 +9,7 @@ from telegram.constants import ParseMode
 from telegram.error import BadRequest, NetworkError, TelegramError, TimedOut
 from telegram.ext import ContextTypes
 
-from config.project_secrets import DEVELOPER_CHAT_ID
+from src.config.project_secrets import DEVELOPER_CHAT_ID
 
 log = logging.getLogger(__name__)
 
@@ -41,10 +41,6 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     update_str = update.to_dict() if isinstance(update, Update) else str(update)
     message = (
         f"An exception was raised while handling an update\n"
-        f"<pre>update = {html.escape(json.dumps(update_str, indent=2, ensure_ascii=False))}"
-        "</pre>\n\n"
-        f"<pre>context.chat_data = {html.escape(str(context.chat_data))}</pre>\n\n"
-        f"<pre>context.user_data = {html.escape(str(context.user_data))}</pre>\n\n"
         f"<pre>{html.escape(tb_string)}</pre>"
     )
 
