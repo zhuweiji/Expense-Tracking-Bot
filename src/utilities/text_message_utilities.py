@@ -105,7 +105,7 @@ def format_nested_dict(results, indent=0):
     return '\n'.join(output)
 
 
-def sort_csv_by_price_to_telegram_html(csv_content):
+def sort_csv_by_price_to_telegram_html(csv_content: str):
     # Read CSV content
     csv_file = io.StringIO(csv_content)
     reader = csv.DictReader(csv_file)
@@ -114,11 +114,22 @@ def sort_csv_by_price_to_telegram_html(csv_content):
     data = list(reader)
     data.sort(key=lambda x: safe_float(x.get('price', 0) or 0), reverse=True)
 
+    indexed_data = []
+
+    idx = 1
+    for i in data:
+        d = {}
+        d['index'] = idx
+        for k, v in i.items():
+            d[k] = v
+        indexed_data.append(d)
+        idx += 1
+
     # Generate Telegram-compatible HTML
     html_output = '<pre>\n'
 
     # Add header row
-    headers = list(data[0].keys())
+    headers = list(indexed_data[0].keys())
     header_row = ' | '.join(
         f'<b>{html.escape(header)}</b>' for header in headers)
     html_output += f'{header_row}\n'
@@ -126,7 +137,7 @@ def sort_csv_by_price_to_telegram_html(csv_content):
         len(header_row.replace('<b>', '').replace('</b>', '')) + '\n'
 
     # Add data rows
-    for row in data:
+    for row in indexed_data:
         row_values = [html.escape(str(row[header])) for header in headers]
         html_output += ' | '.join(row_values) + '\n'
 
