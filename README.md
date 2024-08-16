@@ -19,6 +19,7 @@ The bot is designed to run as a Docker container and uses python-telegram-bot.
 
 - Docker
 - [Telegram Bot Token](https://core.telegram.org/bots/tutorial)
+- [Anthropic API Key](https://docs.anthropic.com/en/api/getting-started)
 
 ## Setup
 
