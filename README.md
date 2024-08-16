@@ -20,6 +20,7 @@ The bot is designed to run as a Docker container and uses python-telegram-bot.
 - Docker
 - [Telegram Bot Token](https://core.telegram.org/bots/tutorial)
 - [Anthropic API Key](https://docs.anthropic.com/en/api/getting-started)
+- [Your Telegram Chat ID](https://t.me/getidsbot) - This is optional, by setting it, any backend error messages can be sent directly to you via Telegram.
 
 ## Setup
 
@@ -33,10 +34,9 @@ The bot is designed to run as a Docker container and uses python-telegram-bot.
 2. Create a `.env` file in the root directory with the following content:
 
    ```
-    TELEGRAM_BOT_TOKEN=
-    ANTHROPIC_API_KEY=
-    DEVELOPER_CHAT_ID=
-
+    TELEGRAM_BOT_TOKEN=<your telegram bot token>
+    ANTHROPIC_API_KEY=<your anthropic API key>
+    DEVELOPER_CHAT_ID=<your telegram chat id>
    ```
 
 3. Build the Docker image:

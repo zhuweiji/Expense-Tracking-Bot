@@ -10,4 +10,4 @@ load_dotenv(env_file)
 
 TELEGRAM_BOT_TOKEN = os.environ['TELEGRAM_BOT_TOKEN']
 ANTHROPIC_API_KEY = os.environ['ANTHROPIC_API_KEY']
-DEVELOPER_CHAT_ID = os.environ['DEVELOPER_CHAT_ID']
+DEVELOPER_CHAT_ID = os.environ.get('DEVELOPER_CHAT_ID', None)

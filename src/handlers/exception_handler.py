@@ -36,6 +36,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
     tb_list = traceback.format_exception(
         None, context.error, context.error.__traceback__)
     tb_string = "".join(tb_list)
+    log.error(tb_string)
 
     # Build the message with some markup and additional information about what happened.
     update_str = update.to_dict() if isinstance(update, Update) else str(update)
@@ -44,6 +45,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         f"<pre>{html.escape(tb_string)}</pre>"
     )
 
-    await context.bot.send_message(
-        chat_id=DEVELOPER_CHAT_ID, text=message, parse_mode=ParseMode.HTML
-    )
+    if DEVELOPER_CHAT_ID:
+        await context.bot.send_message(
+            chat_id=DEVELOPER_CHAT_ID, text=message, parse_mode=ParseMode.HTML
+        )
