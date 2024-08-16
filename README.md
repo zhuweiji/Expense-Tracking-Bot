@@ -1,6 +1,10 @@
 # Expense Tracker Bot
 
-This repository contains a Telegram bot that helps you track and analyze your expenses. The bot is designed to run as a Docker container and uses python-telegram-bot to interact with users.
+This repository contains a Telegram bot that helps you track and analyze your expenses. You might have several credit cards and debit accounts spread across various banks. Each will provide different monthly credit card statements, which makes it a little hard to track your overall expenditure. This project allows you to spin up a telegram bot to interact with your expense data, helping you to get a comprehensive view over your expenditure. 
+
+Of course, since this is very personal financial data that you wouldn't want a third-party handling, this allows you to maintain complete control over all your data.
+
+The bot is designed to run as a Docker container and uses python-telegram-bot.
 
 ## Features
 
