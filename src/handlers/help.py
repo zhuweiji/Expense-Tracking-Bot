@@ -20,9 +20,12 @@ Expense Tracker Bot Help
 This bot helps you track and analyze your expenses. Here are the available commands:
 
 Commands:
-• /view - Displays an analysis of last month's expenses and an overview of transactions by month.
-• /data - Lists the months for which expense data is available and processed.
-• /list - Shows a detailed list of transactions from the last month.
+- /start - Begin interacting with the bot
+- /help - Display available commands and instructions
+- /last_month_stats - Show an analysis of last month's expenses and an overview of transactions by month
+- /last_statement_stats - Show an analysis of the last credit card statement's expenses
+- /data - List the months for which expense data is available and processed
+- /list - Display a detailed list of transactions from the last month
 
 Uploading Statements:
 To add new expense data:
