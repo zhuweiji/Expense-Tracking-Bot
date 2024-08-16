@@ -18,7 +18,7 @@ The bot is designed to run as a Docker container and uses python-telegram-bot.
 ## Prerequisites
 
 - Docker
-- Telegram Bot Token (obtain from BotFather)
+- [Telegram Bot Token](https://core.telegram.org/bots/tutorial)
 
 ## Setup
 
